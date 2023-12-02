@@ -1,5 +1,4 @@
 import os
-import io
 import re
 
 path = os.path.dirname(os.path.realpath(__file__))
@@ -47,9 +46,7 @@ def parseLine(txt):
         return game
 
 with open(os.path.join(path,'input.txt')) as f:
-    input = f.read()
-
-lines = io.StringIO(input)
+    lines = f.readlines()
 
 for line in lines:
     line = line.strip()
