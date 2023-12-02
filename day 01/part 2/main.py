@@ -45,15 +45,12 @@ lines = io.StringIO(input)
 for line in lines:
     line = line.strip()
     
-    orig = line
-    
     digits = findDigits(line)
     
     solution = ''.join(digits[0] + digits[-1])
     sum = sum + int(solution)
     
     print(
-        orig + ' - ' +
         line + ' - ' + 
         digits + ' - ' +
         solution + ' - ' +
