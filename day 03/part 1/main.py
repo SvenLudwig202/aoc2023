@@ -28,7 +28,7 @@ limit_colmin = 0
 limit_colmax = grid.shape[1]
 limit_col = range(limit_colmin, limit_colmax)
 
-def hasadjacentsymbol(row, col, grid):
+def hasadjacentsymbol(row, col):
     surrounds = [
         [row-1, col-1],
         [row-1, col],
@@ -54,7 +54,7 @@ valid = False
 for (row, col), value in np.ndenumerate(grid):
     if (value.isnumeric()):
         number = number + value
-        if (hasadjacentsymbol(row, col, grid)):
+        if (hasadjacentsymbol(row, col)):
             valid = True
     
     if (not value.isnumeric() or col == limit_colmax-1):
