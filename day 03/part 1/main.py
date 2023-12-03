@@ -56,9 +56,6 @@ for (row, col), value in np.ndenumerate(grid):
         number = number + value
         if (hasadjacentsymbol(row, col, grid)):
             valid = True
-            
-    if (number == '617'):
-        pass
     
     if (not value.isnumeric() or col == limit_colmax-1):
         if len(number) > 0:
