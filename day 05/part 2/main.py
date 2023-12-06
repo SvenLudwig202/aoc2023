@@ -74,15 +74,20 @@ for line in lines:
 print("")
 print("---")
 
+lowestseed = []
+
 for (s, v) in maps["seeds"].items():
     print("Processing Seeds starting at {} ({})".format(s, v))
     for i in range(int(s), int(s) + int(v) + 1):
         seedlocation = lookupseedlocation(int(i))
         # print("Seed: {}, Location: {}".format(i, seedlocation))
-        seedlocations.update({i: seedlocation})
+        if len(lowestseed) == 0 or lowestseed[1] > seedlocation:
+            lowestseed = [i, seedlocation]
 
-lowestseed = min(seedlocations, key=seedlocations.get)
+        # seedlocations.update({i: seedlocation})
+
+#lowestseed = min(seedlocations, key=seedlocations.get)
 
 print("---")
-print("Lowest Seed: {}, Location: {}".format(lowestseed, seedlocations[lowestseed]))
+print("Lowest Seed: {}, Location: {}".format(lowestseed[0], lowestseed[1]))
 # print('final sum: ' + str(sum))
